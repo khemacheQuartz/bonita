@@ -1,17 +1,7 @@
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'pierre@quartz.com', 'pierre');
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'paul@quartz.com', 'paul');
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'jacques@quartz.com', 'jacques');
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'martin@quartz.com', 'martin');
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'martine@quartz.com', 'martine');
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'aline@quartz.com', 'aline');
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'julie@quartz.com', 'julie');
-insert into quartz.user values (nextval('quartz.hibernate_sequence'), 'claire@quartz.com', 'claire');
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Mario', 'http://www.mario.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Mario 2', 'http://www.mario2.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Mario 3', 'http://www.mario3.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Zelda', 'http://www.zelda.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Zelda 2', 'http://www.zelda2.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Zelda 3', 'http://www.zelda2.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Sonic', 'http://www.sonic.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Sonic 2', 'http://www.sonic2.com',false);
-insert into quartz.game (id,title, cover, deleted) values (nextval('quartz.hibernate_sequence'), 'Sonic 3', 'http://www.sonic3.com',false);
+insert into role (name) values ('ROLE_ADM');
+insert into role (name) values ('ROLE_CHF');
+insert into role (name) values ('ROLE_USR');
+
+insert into user (login, password, email, role_id) values ('admin', 'admin', 'admin@yopmail.com', 1);
+insert into user (login, password, email, role_id) values ('chef', 'chef', 'chef@yopmail.com', 2);
+insert into user (login, password, email, role_id) values ('user', 'user', 'chef@yopmail.com', 3);

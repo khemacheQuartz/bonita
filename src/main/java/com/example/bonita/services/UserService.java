@@ -1,13 +1,11 @@
-package com.example.quartztest.services;
+package com.example.bonita.services;
 
-import com.example.quartztest.domain.Game;
-import com.example.quartztest.domain.User;
-import com.example.quartztest.repositories.UserRepository;
+import com.example.bonita.domain.User;
+import com.example.bonita.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class UserService {
@@ -23,6 +21,12 @@ public class UserService {
         return user.get();
     }
 
+    public User getUserByLogin(String name) {
+        Optional<User> user = userRepository.findByLogin(name);
+        return user.get();
+    }
+
+
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
@@ -33,14 +37,6 @@ public class UserService {
 
     public void removeUser(User user) {
         userRepository.delete(user);
-    }
-
-    public Set<User> getAllFriendsByUser(User user) {
-        return user.getFriends();
-    }
-
-    public Set<Game> getAllGamesByUser(User user) {
-        return user.getGames();
     }
 
 }
