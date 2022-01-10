@@ -19,13 +19,13 @@ class BonitaApplicationTests {
     }
 
     @Test
-    void allRestaurantNotNullTest(){
+    void allRecipesNotNullTest(){
         List<Recipe> recipeList = recipeService.getAllRecipes();
         assert (recipeList != null);
     }
 
     @Test
-    void deleteRestaurantTest() {
+    void deleteRecipeTest() {
         Recipe recipe = recipeService.getRecipeById(1l);
         recipeService.removeRecipe(recipe);
         List<Recipe> recipeList = recipeService.getAllRecipes();
@@ -37,12 +37,12 @@ class BonitaApplicationTests {
     }
 
     @Test
-    void createNewRestaurant() {
+    void createNewRecipe() {
         Recipe newRecipe = new Recipe();
-        newRecipe.setName("RestaurantTest");
+        newRecipe.setName("RecipeTest");
         recipeService.saveRecipe(newRecipe);
-        Recipe savedRecipe = recipeService.getRecipeByName("RestaurantTest");
-        assert (savedRecipe != null && "RestaurantTest".equals(savedRecipe.getName()));
+        Recipe savedRecipe = recipeService.getRecipeByName("RecipeTest");
+        assert (savedRecipe != null && "RecipeTest".equals(savedRecipe.getName()));
     }
 
 }
